@@ -1,6 +1,7 @@
 package com.julianvalencia.trekdescubre.ui.register
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.julianvalencia.trekdescubre.R
 import com.julianvalencia.trekdescubre.databinding.ActivityRegisterBinding
+import com.julianvalencia.trekdescubre.ui.session.SessionActivity
 import java.util.Calendar
 import java.util.Locale
 
@@ -29,6 +31,13 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel.errorMsg.observe(this){msg->
             showErrorMsg(msg)
         }
+
+        registerViewModel.registerSuccess.observe(this){msg->
+            val intent = Intent(this, SessionActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         registerBinding.buttonInicio.setOnClickListener {
             val email: String = registerBinding.email.text.toString()

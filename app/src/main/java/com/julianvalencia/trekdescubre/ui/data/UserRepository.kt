@@ -22,4 +22,17 @@ class UserRepository {
             ResourceRemote.Error(message = e.localizedMessage)
         }
     }
+
+    suspend fun loginUser(email: String, password: String): ResourceRemote<String?> {
+        return try {
+            val result = auth.signInWithEmailAndPassword(email, password).await()
+            ResourceRemote.Success(data = result.user?.uid)
+        } catch (e: FirebaseAuthException) {
+            Log.e("Register", e.localizedMessage)
+            ResourceRemote.Error(message = e.localizedMessage)
+        } catch (e: FirebaseNetworkException) {
+            Log.e("RegisterNetwork", e.localizedMessage)
+            ResourceRemote.Error(message = e.localizedMessage)
+        }
+    }
 }
