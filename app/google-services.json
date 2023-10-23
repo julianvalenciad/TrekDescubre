@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "267538967759",
+    "project_id": "trek-descubre",
+    "storage_bucket": "trek-descubre.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267538967759:android:a88e0d0836e66591849bba",
+        "android_client_info": {
+          "package_name": "com.julianvalencia.trekdescubre"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6wODhGj_DnsisSsl9HufgZp6Ct6_K6mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
