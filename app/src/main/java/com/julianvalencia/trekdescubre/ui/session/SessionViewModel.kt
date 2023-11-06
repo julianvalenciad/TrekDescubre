@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.julianvalencia.trekdescubre.ui.data.ResourceRemote
-import com.julianvalencia.trekdescubre.ui.data.UserRepository
+import com.julianvalencia.trekdescubre.data.ResourceRemote
+import com.julianvalencia.trekdescubre.data.UserRepository
 import emailValidator
 import kotlinx.coroutines.launch
 
@@ -40,6 +40,7 @@ class SessionViewModel : ViewModel(){
                                     when (msg){
                                         "The email address is already in use by another account." -> msg = "Ya existe una cuenta con ese correo electrónico"
                                         "A network error (such as timeout, interrupted connection or unreachable host) has occurred." -> msg = "Revise su conexión a internet"
+                                        "An internal error has occurred. [ INVALID_LOGIN_CREDENTIALS ]" -> msg = "Correo electrónico o contraseña invalida"
                                     }
                                     _errorMsg.postValue(msg)
                                 }
@@ -47,7 +48,6 @@ class SessionViewModel : ViewModel(){
 
                                 }
                             }
-
                         }
                     }
                 }

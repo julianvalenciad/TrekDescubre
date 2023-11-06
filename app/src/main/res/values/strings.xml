@@ -32,4 +32,7 @@
     <string name="seguridad_subida">Seguridad (1 a 5)</string>
     <string name="descripcion_subida">Descripción</string>
     <string name="guardar">Guardar</string>
+    <string name="field">*Campo obligatorio</string>
+    <string name="nombre_ruta">Nombre de la ruta</string>
+    <string name="descripcion_ruta">Descipción de la ruta</string>
 </resources>

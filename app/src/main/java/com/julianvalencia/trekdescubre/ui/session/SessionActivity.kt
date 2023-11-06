@@ -3,14 +3,10 @@ package com.julianvalencia.trekdescubre.ui.session
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.julianvalencia.trekdescubre.R
 import com.julianvalencia.trekdescubre.databinding.ActivitySessionBinding
-import com.julianvalencia.trekdescubre.ui.main.MainActivity
 import com.julianvalencia.trekdescubre.ui.navigation.NavigationActivity
 import com.julianvalencia.trekdescubre.ui.register.RegisterActivity
-import com.julianvalencia.trekdescubre.ui.register.RegisterViewModel
 
 
 class SessionActivity : AppCompatActivity() {
@@ -26,11 +22,13 @@ class SessionActivity : AppCompatActivity() {
         mainBinding.buttonRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         sessionViewModel.registerSuccess.observe(this){msg->
             val intent = Intent(this, NavigationActivity::class.java)
             startActivity(intent)
+
         }
 
         mainBinding.buttonInicio.setOnClickListener {
@@ -40,5 +38,7 @@ class SessionActivity : AppCompatActivity() {
             //val intent = Intent(this, NavigationActivity::class.java)
             //startActivity(intent)
         }
+
+
     }
 }

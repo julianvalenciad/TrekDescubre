@@ -154,13 +154,15 @@
             android:hint="@string/contraseña"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/datebutton">
+            app:layout_constraintTop_toBottomOf="@+id/datebutton"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textPassword" />
+                android:inputType="text|textPassword"
+                app:endIconMode="password_toggle"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -173,13 +175,15 @@
             android:hint="@string/repetir_contraseña"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/repPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textPassword" />
+                android:inputType="text|textPassword"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

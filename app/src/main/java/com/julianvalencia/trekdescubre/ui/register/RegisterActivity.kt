@@ -35,24 +35,8 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel.registerSuccess.observe(this){msg->
             val intent = Intent(this, SessionActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
-
-
-
-        registerBinding.buttonInicio.setOnClickListener {
-            val email: String = registerBinding.email.text.toString()
-            val password: String = registerBinding.Password.text.toString()
-            val repPassword: String = registerBinding.repPassword.text.toString()
-
-            registerViewModel.validateFields(email, password, repPassword)
-
-
-
-        }
-
-
-
-
 
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -74,6 +58,20 @@ class RegisterActivity : AppCompatActivity() {
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+
+        registerBinding.buttonInicio.setOnClickListener {
+            val email: String = registerBinding.email.text.toString()
+            val password: String = registerBinding.Password.text.toString()
+            val repPassword: String = registerBinding.repPassword.text.toString()
+            val full_name = registerBinding.nombreCompleto.text.toString()
+            var genero = "Masculino"
+            if (registerBinding.femenino.isChecked){
+                genero = "Femenino"
+            }
+            registerViewModel.validateFields(email, password, repPassword, full_name, genero, FechaNacimiento)
+
+        }
+
     }
 
     private fun showErrorMsg(msg: String?) {

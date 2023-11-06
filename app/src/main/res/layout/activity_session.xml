@@ -64,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
         <Button
-            android:id="@+id/olvido_contraseña_button"
+            android:id="@+id/olvido_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -90,7 +90,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/olvido_contraseña_button" />
+            app:layout_constraintTop_toBottomOf="@+id/olvido_password" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -121,13 +121,15 @@
             android:hint="@string/contraseña"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_sesion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textPassword" />
+                android:inputType="text|textPassword"
+                />
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

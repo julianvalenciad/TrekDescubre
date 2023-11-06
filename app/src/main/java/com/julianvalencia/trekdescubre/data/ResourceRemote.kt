@@ -1,4 +1,4 @@
-package com.julianvalencia.trekdescubre.ui.data
+package com.julianvalencia.trekdescubre.data
 
 sealed class ResourceRemote<T>(
     var data: T? = null,
