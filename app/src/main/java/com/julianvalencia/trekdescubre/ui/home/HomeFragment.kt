@@ -34,7 +34,6 @@ class HomeFragment : Fragment() {
 
         homeViewModel.rutasList.observe(viewLifecycleOwner){rutasList ->
             rutasAdapter.appendItem(rutasList)
-
         }
 
         rutasAdapter = RutasAdapter(rutasList, onItemClicked = {onRutasItemClicked(it)})

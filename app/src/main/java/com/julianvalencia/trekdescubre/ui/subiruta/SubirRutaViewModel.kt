@@ -19,11 +19,11 @@ class SubirRutaViewModel : ViewModel() {
 
     private val _createRutaSuccess: MutableLiveData<Boolean> = MutableLiveData()
     val createRutaSuccess: LiveData<Boolean> = _createRutaSuccess
-    fun validateFields(nombre: String, ubicacion: String, distancia: String, seguridad: String, dificultad: String, descripcion: String) {
+    fun validateFields(nombre: String, ubicacion: String, distancia: String, seguridad: String, dificultad: String, descripcion: String, urlPicture: String) {
         if(nombre.isEmpty() || ubicacion.isEmpty() || distancia.isEmpty() || seguridad.isEmpty() || dificultad.isEmpty() || descripcion.isEmpty()){
             _errorMsg.value = "Debe digitar todos los campos"
         }else{
-            val ruta = Rutas(nombre = nombre, ubicacion = ubicacion, distancia = distancia, seguridad = seguridad, dificultad = dificultad, descripcion = descripcion)
+            val ruta = Rutas(nombre = nombre, ubicacion = ubicacion, distancia = distancia, seguridad = seguridad, dificultad = dificultad, descripcion = descripcion, urlpicture = urlPicture)
             viewModelScope.launch {
                 val result = rutasRepository.createRuta(ruta)
                 result.let {resourceRemote ->

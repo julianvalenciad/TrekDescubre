@@ -35,4 +35,5 @@
     <string name="field">*Campo obligatorio</string>
     <string name="nombre_ruta">Nombre de la ruta</string>
     <string name="descripcion_ruta">Descipción de la ruta</string>
+    <string name="URL_picture">URL foto</string>
 </resources>

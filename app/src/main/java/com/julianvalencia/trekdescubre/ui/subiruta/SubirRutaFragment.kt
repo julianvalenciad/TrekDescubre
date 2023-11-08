@@ -37,8 +37,9 @@ class SubirRutaFragment : Fragment() {
             val seguridad: String = subirRutaBinding.seguridadRuta.text.toString()
             val dificultad: String = subirRutaBinding.dificultadRuta.text.toString()
             val descripcion: String = subirRutaBinding.descripcionRuta.text.toString()
+            val urlPicture: String = subirRutaBinding.urlPicture.text.toString()
 
-            subirRutaViewModel.validateFields(nombre, ubicacion, distancia, seguridad, dificultad, descripcion)
+            subirRutaViewModel.validateFields(nombre, ubicacion, distancia, seguridad, dificultad, descripcion,urlPicture)
 
         }
 
